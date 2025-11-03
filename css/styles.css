@@ -582,7 +582,7 @@ p {
 
 /* Page Hero */
 .page-hero {
-  height: 60vh;
+  height: 20vh;
   position: relative;
   display: flex;
   align-items: center;
@@ -604,14 +604,6 @@ p {
   object-fit: cover;
 }
 
-.page-hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(15, 20, 20, 0.6);
-}
 
 .page-hero-content {
   text-align: center;
@@ -619,14 +611,14 @@ p {
 }
 
 .page-hero-content h1 {
-  color: var(--text-light);
+  color: var(--text-dark);
+  transform: translateY(1.3em);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 10px;
 }
 
 .page-hero-content p {
-  color: rgba(255, 255, 255, 0.9);
+  opacity: 0;
   font-style: italic;
   margin-bottom: 0;
 }
