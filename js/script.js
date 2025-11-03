@@ -61,6 +61,47 @@ function closeMobileMenu() {
   document.body.style.overflow = "";
 }
 
+//Back to top button functionality
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  const scrollTop = window.scrollY || document.documentElement.scrollTop;
+  const scrollHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+
+  // Show button after 300px scroll
+  if (scrollTop > 300) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show", "pulse");
+  }
+
+  // Start pulse when near bottom (within 100px)
+  if (scrollTop >= scrollHeight - 100) {
+    backToTop.classList.add("pulse");
+  } else {
+    backToTop.classList.remove("pulse");
+  }
+});
+
+// Smooth scroll to top (compatible with Lenis)
+backToTop.addEventListener("click", () => {
+  if (typeof lenis !== "undefined") {
+    lenis.scrollTo(0);
+  } else {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+});
+
+// Smooth scroll to top (compatible with Lenis)
+backToTop.addEventListener("click", () => {
+  if (typeof lenis !== "undefined") {
+    lenis.scrollTo(0);
+  } else {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+});
+
 // Gallery lightbox state and image data
 let currentImageIndex = 0;
 const galleryImages = Array.from(galleryItems).map((item) => {
